@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amritanshu Shukla — Portfolio</title>
+  <meta name="description" content="Portfolio of Amritanshu Shukla — B.Tech CSE | Data Analyst & Frontend Developer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="portfolio/css/styles.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans">
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <div class="preloader-spinner"></div>
+      <p>Loading Portfolio...</p>
+    </div>
+  </div>
+  <div id="stars"></div>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-cyan-500/30">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center font-bold">AS</div>
+        <div>
+          <div class="text-sm font-bold tracking-wide">Amritanshu Shukla</div>
+          <div class="text-xs text-cyan-400">CSE • 3rd Year | Frontend Developer & Data Analyst</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
+        <a href="#about" class="hover:text-cyan-400 transition">About</a>
+        <a href="#resume" class="hover:text-cyan-400 transition">Resume</a>
+        <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="menuBtn" class="p-2 rounded-md border border-cyan-400 text-cyan-400">☰</button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-cyan-500/20 bg-slate-900">
+      <div class="px-6 py-4 flex flex-col gap-3 text-cyan-300">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <!-- Hero Section -->
+    <section id="home" class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 class="text-5xl font-extrabold leading-tight">
+          Hi, I’m <span class="text-cyan-400 neon-text">Amritanshu Shukla</span><br />
+          <span class="text-3xl text-slate-300">Data Analyst & Frontend Developer</span>
+        </h1>
+        <p class="mt-6 text-slate-400 leading-relaxed">
+          3rd-year B.Tech CSE student passionate about data analysis, visualization, and building interactive frontend solutions. I aim to deliver actionable insights and visually compelling web interfaces.
+        </p>
+        <div class="mt-8 flex gap-4">
+          <a href="#projects" class="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-md hover:shadow-cyan-500/40 transition">View Projects</a>
+          <a href="portfolio/assets/amritanshu cv.pdf" class="px-6 py-3 rounded-lg border border-cyan-400 text-cyan-400 hover:bg-cyan-500 hover:text-white transition">Download Resume</a>
+        </div>
+      </div>
+      <div class="flex justify-center items-center">
+        <img src="portfolio/assets/edited photo.jpg" alt="Amritanshu Shukla" class="w-70 h-60 rounded-full border-4 border-cyan-400 object-cover shadow-lg" />
+      </div>
+    </section>
+
+    <!-- Skills Section with Animated Bars & Charts -->
+    <section class="mt-12 p-6 bg-slate-900 rounded-2xl shadow-lg border border-cyan-500/30 fade-in">
+      <h3 class="text-lg font-bold text-cyan-400 mb-4"><i class="fas fa-code mr-2"></i>Technical Skills</h3>
+      <div>
+        <div class="mb-1">
+          <span class="text-slate-300"><i class="fab fa-html5 mr-2"></i>HTML / CSS / JS</span>
+          <div class="w-full bg-slate-800 rounded-full h-4 mt-1 overflow-hidden">
+            <div class="bg-cyan-400 h-4 rounded-full animate-skillbar" style="width:90%"></div>
+          </div>
+          <canvas id="htmlChart" width="20" height="20" class="mt-2"></canvas>
+        </div>
+        <div>
+          <span class="text-slate-300"><i class="fab fa-css3-alt mr-2"></i>Tailwind / Frontend</span>
+          <div class="w-full bg-slate-800 rounded-full h-4 mt-1 overflow-hidden">
+            <div class="bg-blue-500 h-4 rounded-full animate-skillbar" style="width:85%"></div>
+          </div>
+        </div>
+        <div>
+          <span class="text-slate-300"><i class="fas fa-chart-bar mr-2"></i>Data Analysis</span>
+          <div class="w-full bg-slate-800 rounded-full h-4 mt-1 overflow-hidden">
+            <div class="bg-green-500 h-4 rounded-full animate-skillbar" style="width:80%"></div>
+          </div>
+        </div>
+        <div>
+          <span class="text-slate-300"><i class="fab fa-python mr-2"></i>Data Visualization using Python</span>
+          <div class="w-full bg-slate-800 rounded-full h-4 mt-1 overflow-hidden">
+            <div class="bg-purple-500 h-4 rounded-full animate-skillbar" style="width:75%"></div>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="mt-20 fade-in">
+      <h2 class="text-3xl font-bold text-cyan-400 neon-text"><i class="fas fa-project-diagram mr-2"></i>Projects</h2>
+      <p class="mt-2 text-slate-400">Some of my highlighted technical projects:</p>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <article class="p-5 rounded-xl border border-cyan-500/30 bg-slate-900 project-card transition">
+          <h3 class="font-semibold text-white"><i class="fas fa-robot mr-2"></i><a href="https://github.com/amritanshu1968-wq/AI-based-Virtual-Assistant.git" target="_blank" class="hover:text-cyan-400 transition">AI-Based Virtual Assistant</a></h3>
+          <p class="mt-2 text-sm text-slate-400">An AI-powered assistant that performs tasks, answers queries, and interacts via voice commands.</p>
+        </article>
+        <article class="p-5 rounded-xl border border-cyan-500/30 bg-slate-900 project-card transition">
+          <h3 class="font-semibold text-white"><i class="fas fa-user-check mr-2"></i><a href="https://github.com/amritanshu1968-wq/Student-Attendance-Management-System-Using-Face-Recognition.git" target="_blank" class="hover:text-cyan-400 transition">Attendance Management System using Face Recognition</a></h3>
+          <p class="mt-2 text-sm text-slate-400">Automated attendance system using face recognition to mark student presence accurately.</p>
+        </article>
+        <article class="p-5 rounded-xl border border-cyan-500/30 bg-slate-900 project-card transition">
+          <h3 class="font-semibold text-white"><i class="fas fa-camera mr-2"></i><a href="https://github.com/amritanshu1968-wq/face_deteection.git" target="_blank" class="hover:text-cyan-400 transition">Face Detection</a></h3>
+          <p class="mt-2 text-sm text-slate-400">Real-time face detection system implemented using computer vision techniques.</p>
+        </article>
+        <article class="p-5 rounded-xl border border-cyan-500/30 bg-slate-900 project-card transition">
+          <h3 class="font-semibold text-white"><i class="fas fa-comments mr-2"></i><a href="https://github.com/amritanshu1968-wq/Personal-Healthcare-Chatbot.git" target="_blank" class="hover:text-cyan-400 transition">Healthcare Chatbot</a></h3>
+          <p class="mt-2 text-sm text-slate-400">An intelligent chatbot that provides healthcare information and basic medical guidance.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+<section id="certifications" class="mt-20 fade-in">
+  <h2 class="text-3xl font-bold text-cyan-400 neon-text"><i class="fas fa-certificate mr-2"></i>Certifications</h2>
+  <p class="mt-2 text-slate-400">Some of my earned certifications:</p>
+  <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <article class="p-5 rounded-xl border border-cyan-500/30 bg-slate-900 hover:shadow-cyan-500/40 hover:scale-105 hover:border-cyan-400 transition-all duration-300 cursor-pointer">
+      <h3 class="font-semibold text-white"><i class="fas fa-award mr-2"></i>Robots are coming! Build IoT apps with Watson AI, Swift, and Node-RED</h3>
+      <p class="mt-2 text-sm text-slate-400">Issued by IBM on Oct 03, 2024</p>
+      <a href="https://www.credly.com/badges/ae218df4-d1f3-42ff-8aeb-3adfdf8fe95b" target="_blank" class="text-cyan-400 text-sm hover:text-cyan-300">Verify Certificate</a>
+    </article>
+    <article class="p-5 rounded-xl border border-cyan-500/30 bg-slate-900 hover:shadow-cyan-500/40 hover:scale-105 hover:border-cyan-400 transition-all duration-300 cursor-pointer">
+      <h3 class="font-semibold text-white"><i class="fas fa-chart-line mr-2"></i>Data Visualization Using Python</h3>
+      <p class="mt-2 text-sm text-slate-400">Issued by IBM on Oct 04, 2024</p>
+      <a href="https://www.credly.com/badges/92233db6-470d-4a3d-a7e5-c578aea11aa0" target="_blank" class="text-cyan-400 text-sm hover:text-cyan-300">Verify Certificate</a>
+    </article>
+  </div>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about" class="mt-20 grid md:grid-cols-3 gap-8 items-start fade-in">
+      <div class="md:col-span-2 bg-slate-900 p-8 rounded-2xl border border-cyan-500/30">
+        <h2 class="text-3xl font-bold text-cyan-400 neon-text"><i class="fas fa-user mr-2"></i>About Me</h2>
+        <p class="mt-4 text-slate-300 leading-relaxed">
+          Hi, I’m Amritanshu Shukla, a frontend developer and tech enthusiast who loves turning ideas into interactive digital experiences. I enjoy building clean, modern, and user-friendly websites while also exploring the world of data and how it can shape smarter solutions. Over time, I’ve worked on projects like AI-based virtual assistants, face recognition systems, and healthcare chatbots, which helped me blend creativity with problem-solving. I’m always eager to learn, experiment with new technologies, and create projects that make an impact.
+        </p>
+      </div>
+      <aside class="p-8 bg-slate-900 rounded-2xl border border-cyan-500/30">
+        <h3 class="font-semibold text-cyan-400"><i class="fas fa-graduation-cap mr-2"></i>Education</h3>
+        <p class="mt-2 text-sm text-slate-300">B.Tech — Computer Science Engineering — 3rd Year</p>
+
+        <h3 class="mt-6 font-semibold text-cyan-400"><i class="fas fa-address-book mr-2"></i>Contact</h3>
+        <p class="mt-2 text-sm text-slate-300">Email: <a href="mailto:amritanshushukla1968@gmail.com" class="text-cyan-400">amritanshushukla1968@gmail.com</a></p>
+        <p class="mt-2 text-sm text-slate-300">GitHub: <a href="https://github.com/amritanshu1968-wq" target="_blank" class="text-cyan-400">github.com/amritanshu1968-wq</a></p>
+        <p class="mt-2 text-sm text-slate-300">LinkedIn: <a href="https://www.linkedin.com/in/amritanshu-shukla-9aa49029a" target="_blank" class="text-cyan-400">linkedin.com/in/amritanshu-shukla-9aa49029a</a></p>
+      </aside>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="mt-20 bg-slate-900 p-8 rounded-2xl border border-cyan-500/30 fade-in">
+      <h2 class="text-3xl font-bold text-cyan-400 neon-text"><i class="fas fa-file-alt mr-2"></i>Resume</h2>
+      <p class="mt-3 text-slate-400">Download my resume here:</p>
+      <a href="portfolio/assets/amritanshu cv.pdf" class="inline-block mt-4 px-5 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold shadow-md hover:shadow-cyan-500/40 transition">Download Resume</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="mt-20 bg-slate-900 p-8 rounded-2xl border border-cyan-500/30 fade-in">
+      <h2 class="text-3xl font-bold text-cyan-400 neon-text"><i class="fas fa-envelope mr-2"></i>Contact</h2>
+      <form action="https://submit-form.com/Hn9zn7AQt" method="post" class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <input name="name" placeholder="Your Name" required class="p-3 bg-slate-800 border border-cyan-500/30 rounded" />
+        <input name="email" type="email" placeholder="Your Email" required class="p-3 bg-slate-800 border border-cyan-500/30 rounded" />
+        <input name="subject" placeholder="Subject" class="p-3 bg-slate-800 border border-cyan-500/30 rounded sm:col-span-2" />
+        <textarea name="message" placeholder="Message" rows="5" required class="p-3 bg-slate-800 border border-cyan-500/30 rounded sm:col-span-2"></textarea>
+        <button type="submit" class="sm:col-span-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold shadow-md hover:shadow-cyan-500/40 transition">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-20 py-6 border-t border-cyan-500/30 bg-slate-900 text-center text-slate-400 text-sm">
+    © <span id="year"></span>Built by Amritanshu Shukla
+  </footer>
+
+  <!-- Scripts -->
+  <script src="portfolio/js/script.js"></script>
+</body>
+</html>
